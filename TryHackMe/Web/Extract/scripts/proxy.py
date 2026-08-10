@@ -13,11 +13,11 @@ a = parser.parse_args()
 listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 listener.bind(("", int(a.lport)))
 listener.listen(1)
-print(f"[🦊] Listening on port {a.lport}")
+print(f"[*] Listening on port {a.lport}")
 
 while True:
     conn, addr = listener.accept()
-    print(f"[🦊] Connection from {addr[0]}:{addr[1]}")
+    print(f"[*] Connection from {addr[0]}:{addr[1]}")
 
     request = conn.recv(262144).decode(errors="ignore")
     print(request)
